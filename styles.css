@@ -14,6 +14,7 @@
     --brown: hsl(14, 45%, 36%);
     --rose800: hsl(332, 51%, 32%);
     --display: block;
+    
 }
 
 body{
@@ -30,6 +31,15 @@ hr{
 b{
     font-family: var(--outfit);
     color: var(--stone600);
+}
+
+.article{
+    margin: 50px auto;
+    width: min-content;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 20px;
+    --colorPuntoLista: hsl(14, 45%, 36%);;
 }
 
 .subtitle{
@@ -63,18 +73,10 @@ b{
     width: 5px;
     height: 5px;
     border-radius: 50%;
-    background-color: var(--brown);
+    background-color: var(--colorPuntoLista);
     /*controlar alineacion vertical de elementos en linea dentro de un contenedor o con otros elementos en la misma linea*/
     vertical-align: middle; 
     margin-right: 20px;
-}
-
-.article{
-    margin: 50px auto;
-    width: min-content;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: 20px;
 }
 
 /*  article presentacion    */
@@ -100,6 +102,7 @@ b{
     background-color: hsl(330, 100%, 98%);
     padding: 20px;
     --display: inline;
+    --colorPuntoLista: hsl(332, 51%, 32%);
 }
 
 .time__preparation .list__ul li::before{
@@ -122,7 +125,7 @@ b{
 /*  article instructions*/
 .article__instructions{
     margin: 20px 0;
-    --display: inline
+    --display: inline;
 }
 
 .article__instructions .list{
@@ -165,4 +168,42 @@ b{
     color: var(--brown);
     font-family: var(--outfit);
     font-weight: 600;
+}
+
+@media screen and (max-width: 666px){
+    .article{
+        width: 90%;
+    }
+    .image{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .article{
+        width: 100%;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 0;
+        margin: auto;
+        position: relative;
+    }
+
+    .title{
+        font-size: 1.8rem;
+    }
+
+    .image{
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 0;
+    }
+
+    .article__presentacion .title{
+        /*Este margen debe ir cambiando, en una pantalla de 320px de ancho ests bien
+        Pero en pantallas mas grandes no se logra apreciar el titulo
+        */
+        margin-top: 140px;
+    }
 }
